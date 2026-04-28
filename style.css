@@ -71,72 +71,63 @@ h1 {
   padding-right: 4px;
 }
 
-.hero-page {
-  display: grid;
-  gap: 24px;
-}
-
-.image-box {
+.hero-full {
   position: relative;
-  width: 100%;
+  min-height: calc(100vh - 230px);
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: 26px;
   background: #e5e7eb;
 }
 
-.image-box img {
+.hero-full img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: calc(100vh - 230px);
+  object-fit: cover;
   display: block;
 }
 
-/* 이미지 하단 그라데이션 */
-.image-box::after {
-  content: "";
+.hero-overlay {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 120px;
-  pointer-events: none;
+  inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.45) 45%,
-    rgba(255, 255, 255, 0.8) 75%,
-    rgba(255, 255, 255, 1) 100%
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.2) 45%,
+    rgba(0, 0, 0, 0.72) 100%
   );
 }
 
-/* 이미지가 아직 없거나 파일명이 다르면 깨진 이미지 아이콘이 보일 수 있습니다. */
-.image-box img[src="main-image.jpg"] {
-  background: #e5e7eb;
-}
-
-.hero-text {
-  padding: 4px 2px;
+.hero-content {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 26px;
+  color: #ffffff;
+  z-index: 2;
 }
 
 .eyebrow {
   margin: 0 0 8px;
-  color: #2563eb;
+  color: rgba(255, 255, 255, 0.82);
   font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.hero-text h2 {
+.hero-content h2 {
   margin: 0 0 12px;
-  font-size: 30px;
-  line-height: 1.18;
-  letter-spacing: -0.04em;
+  font-size: 34px;
+  line-height: 1.15;
+  letter-spacing: -0.05em;
 }
 
-.hero-text p {
+.hero-content p {
   margin: 0;
-  color: #6b7280;
+  color: rgba(255, 255, 255, 0.86);
   line-height: 1.6;
+  font-size: 15px;
 }
 
 .description {
@@ -326,5 +317,23 @@ h1 {
 
   .image-box::after {
     height: 90px;
+
+    .hero-full {
+  min-height: calc(100vh - 190px);
+  border-radius: 22px;
+}
+
+    .hero-full img {
+      min-height: calc(100vh - 190px);
+}
+
+    .hero-content {
+      left: 18px;
+      right: 18px;
+      bottom: 22px;
+}
+
+    .hero-content h2 {
+      font-size: 30px;
 
 }
