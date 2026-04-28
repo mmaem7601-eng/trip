@@ -6,12 +6,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #f8f1ea;
+  background: #fffcfa;
 }
 
 body {
   font-family: Arial, sans-serif;
-  color: #1f2937;
+  color: #2f241d;
 }
 
 button,
@@ -35,24 +35,20 @@ input {
   position: relative;
   width: 100%;
   min-height: 100dvh;
-  background: #f8f1ea;
+  background: #fffcfa;
   overflow-x: hidden;
   overflow-y: auto;
   padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
 }
 
-/* 
-  상단 안전영역까지 배경색이 채워지고,
-  이미지는 원본 비율대로 길게 표시됩니다.
-*/
 .intro-image {
   width: 100%;
   height: auto;
   display: block;
 }
 
-/* 화면 하단 고정 흰색 계열 그라데이션 */
+/* 화면 하단 고정 흰색/크림 계열 그라데이션 */
 .intro-bottom-gradient {
   position: fixed;
   left: 0;
@@ -61,10 +57,10 @@ input {
   height: 190px;
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 248, 239, 0.55) 42%,
-    rgba(255, 248, 239, 0.92) 78%,
-    rgba(255, 248, 239, 1) 100%
+    rgba(255, 252, 250, 0) 0%,
+    rgba(255, 252, 250, 0.55) 42%,
+    rgba(255, 252, 250, 0.92) 78%,
+    rgba(255, 252, 250, 1) 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -99,7 +95,7 @@ input {
 .slide-checklist {
   min-height: 100dvh;
   padding: calc(24px + env(safe-area-inset-top, 0px)) 14px calc(40px + env(safe-area-inset-bottom, 0px));
-  background: linear-gradient(135deg, #eef2f7 0%, #f8fafc 100%);
+  background: #fffcfa;
 }
 
 .page {
@@ -110,8 +106,8 @@ input {
 .app-card {
   padding: 28px 18px;
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(120, 75, 35, 0.12);
 }
 
 .top-bar {
@@ -127,10 +123,10 @@ input {
   margin-bottom: 14px;
   padding: 8px 14px;
   border-radius: 999px;
-  background: #dbeafe;
-  color: #0369a1;
+  background: #fff0df;
+  color: #d66a00;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 h1 {
@@ -138,6 +134,7 @@ h1 {
   font-size: 34px;
   line-height: 1.15;
   letter-spacing: -0.04em;
+  color: #2f241d;
 }
 
 .slide-indicator {
@@ -146,8 +143,8 @@ h1 {
   gap: 3px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: #f3f4f6;
-  color: #4b5563;
+  background: #fff4ea;
+  color: #a45200;
   font-size: 15px;
   font-weight: 800;
   flex-shrink: 0;
@@ -155,7 +152,7 @@ h1 {
 
 .description {
   margin: 0 0 18px;
-  color: #6b7280;
+  color: #7c6758;
   line-height: 1.55;
 }
 
@@ -172,8 +169,8 @@ h1 {
   gap: 7px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: #f3f4f6;
-  color: #374151;
+  background: #fff6ed;
+  color: #5f4635;
   font-size: 13px;
   font-weight: 700;
 }
@@ -186,11 +183,11 @@ h1 {
 }
 
 .jinkyu-dot::before {
-  background: #bfdbfe;
+  background: #ffd2a3;
 }
 
 .minkyoung-dot::before {
-  background: #fde68a;
+  background: #ffe6a8;
 }
 
 .category {
@@ -200,9 +197,10 @@ h1 {
 .category h2 {
   margin: 0 0 14px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #f2dfcc;
   font-size: 22px;
   letter-spacing: -0.03em;
+  color: #3a2a20;
 }
 
 .checklist {
@@ -215,7 +213,7 @@ h1 {
   align-items: center;
   gap: 12px;
   padding: 15px 16px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #f0dfd2;
   border-radius: 17px;
   background: #ffffff;
   transition: 0.18s ease;
@@ -223,45 +221,46 @@ h1 {
 
 .check-item:hover {
   transform: translateY(-1px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.07);
+  box-shadow: 0 10px 22px rgba(120, 75, 35, 0.08);
 }
 
 .check-item input {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
-  accent-color: #2563eb;
+  accent-color: #ff9a3d;
 }
 
 .check-item span {
   font-size: 16px;
   line-height: 1.45;
+  color: #3a2a20;
 }
 
 .check-item strong {
   font-size: 13px;
-  color: #4b5563;
+  color: #8a6041;
 }
 
 .check-item em {
   font-style: normal;
   font-size: 13px;
-  color: #9ca3af;
+  color: #b69b88;
 }
 
 .check-item input:checked + span {
-  color: #9ca3af;
+  color: #b69b88;
   text-decoration: line-through;
 }
 
 .check-item.jinkyu {
-  background: #eff6ff;
-  border-color: #bfdbfe;
+  background: #fff3e8;
+  border-color: #ffd5ad;
 }
 
 .check-item.minkyoung {
-  background: #fffbeb;
-  border-color: #fde68a;
+  background: #fff8e6;
+  border-color: #ffe4a3;
 }
 
 .check-item.optional {
@@ -272,16 +271,16 @@ h1 {
   display: grid;
   gap: 10px;
   padding: 14px;
-  border: 1px dashed #d1d5db;
+  border: 1px dashed #e8cbb5;
   border-radius: 20px;
-  background: #f9fafb;
+  background: #fffaf5;
 }
 
 .outfit-title {
   padding: 0 4px;
   font-size: 14px;
   font-weight: 800;
-  color: #374151;
+  color: #6b4227;
 }
 
 .nav-buttons {
@@ -301,13 +300,14 @@ h1 {
 }
 
 #prevBtn {
-  background: #e5e7eb;
-  color: #374151;
+  background: #fff0df;
+  color: #8a4b16;
 }
 
 #nextBtn {
-  background: #111827;
-  color: #ffffff;
+  background: #ffac59;
+  color: #4a2a0a;
+  box-shadow: 0 10px 24px rgba(255, 172, 89, 0.28);
 }
 
 /* =========================
