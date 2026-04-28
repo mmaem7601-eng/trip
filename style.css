@@ -6,12 +6,12 @@ html,
 body {
   margin: 0;
   padding: 0;
+  background: #f8f1ea;
 }
 
 body {
   font-family: Arial, sans-serif;
   color: #1f2937;
-  background: linear-gradient(135deg, #eef2f7 0%, #f8fafc 100%);
 }
 
 button,
@@ -38,11 +38,13 @@ input {
   background: #f8f1ea;
   overflow-x: hidden;
   overflow-y: auto;
+  padding-top: env(safe-area-inset-top, 0px);
   padding-bottom: calc(110px + env(safe-area-inset-bottom, 0px));
 }
 
 /* 
-  이미지가 잘리지 않고 원본 비율대로 세로로 길게 표시됩니다.
+  상단 안전영역까지 배경색이 채워지고,
+  이미지는 원본 비율대로 길게 표시됩니다.
 */
 .intro-image {
   width: 100%;
@@ -96,7 +98,8 @@ input {
 
 .slide-checklist {
   min-height: 100dvh;
-  padding: 24px 14px 40px;
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 14px calc(40px + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(135deg, #eef2f7 0%, #f8fafc 100%);
 }
 
 .page {
@@ -332,7 +335,7 @@ h1 {
   }
 
   .slide-checklist {
-    padding: 20px 12px 32px;
+    padding: calc(20px + env(safe-area-inset-top, 0px)) 12px calc(32px + env(safe-area-inset-bottom, 0px));
   }
 
   .app-card {
