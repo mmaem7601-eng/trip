@@ -1,54 +1,52 @@
-const slides = document.querySelectorAll(".slide");
+const slide1 = document.getElementById("slide1");
+const slide2 = document.getElementById("slide2");
+
+const introNextBtn = document.getElementById("introNextBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
-const currentPage = document.getElementById("currentPage");
 
-let activeSlide = Number(localStorage.getItem("vietnam-active-slide")) || 0;
+const slides = [slide1, slide2];
+
+let activeSlide = Number(localStorage.getItem("vietnam-active-slide"));
+
+if (Number.isNaN(activeSlide) || activeSlide < 0 || activeSlide > 1) {
+  activeSlide = 0;
+}
 
 function showSlide(index) {
   slides.forEach((slide, slideIndex) => {
     slide.classList.toggle("active", slideIndex === index);
   });
 
-  currentPage.textContent = index + 1;
-
-  prevBtn.disabled = index === 0;
-  nextBtn.textContent = index === slides.length - 1 ? "처음으로" : "다음";
-
-  localStorage.setItem("vietnam-active-slide", index);
+  activeSlide = index;
+  localStorage.setItem("vietnam-active-slide", String(index));
+  window.scrollTo(0, 0);
 }
 
+introNextBtn.addEventListener("click", () => {
+  showSlide(1);
+});
+
 prevBtn.addEventListener("click", () => {
-  if (activeSlide > 0) {
-    activeSlide -= 1;
-    showSlide(activeSlide);
-  }
+  showSlide(0);
 });
 
 nextBtn.addEventListener("click", () => {
-  if (activeSlide < slides.length - 1) {
-    activeSlide += 1;
-  } else {
-    activeSlide = 0;
-  }
-
-  showSlide(activeSlide);
+  showSlide(0);
 });
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"][data-id]');
 
 checkboxes.forEach((checkbox) => {
-  const savedValue = localStorage.getItem(`vietnam-check-${checkbox.dataset.id}`);
+  const storageKey = `vietnam-check-${checkbox.dataset.id}`;
+  const savedValue = localStorage.getItem(storageKey);
 
   if (savedValue === "true") {
     checkbox.checked = true;
   }
 
   checkbox.addEventListener("change", () => {
-    localStorage.setItem(
-      `vietnam-check-${checkbox.dataset.id}`,
-      checkbox.checked
-    );
+    localStorage.setItem(storageKey, checkbox.checked);
   });
 });
 
