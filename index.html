@@ -7,42 +7,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="app-card">
+  <!-- 1페이지: 풀스크린 이미지 -->
+  <section class="slide slide-intro active" id="slide1">
+    <img class="intro-image" src="main-image.jpg" alt="푸꾸옥 여행 이미지" />
+    <div class="intro-bottom-gradient"></div>
 
-      <div class="top-bar">
-        <div>
-          <div class="badge">Vietnam Trip</div>
-          <h1>푸꾸옥 여행 준비</h1>
-        </div>
+    <div class="intro-nav">
+      <button type="button" id="introNextBtn">체크리스트 보기</button>
+    </div>
+  </section>
 
-        <div class="slide-indicator">
-          <span id="currentPage">1</span>
-          <span>/</span>
-          <span>2</span>
-        </div>
-      </div>
+  <!-- 2페이지: 체크리스트 -->
+  <section class="slide slide-checklist" id="slide2">
+    <main class="page">
+      <section class="app-card">
+        <div class="top-bar">
+          <div>
+            <div class="badge">Vietnam Trip</div>
+            <h1>푸꾸옥 여행 준비</h1>
+          </div>
 
-      <!-- 1페이지: 이미지 영역 -->
-      <section class="slide active" id="slide1">
-        <div class="hero-full">
-          <img src="main-image.jpg" alt="푸꾸옥 여행 이미지" />
-      
-          <div class="hero-overlay"></div>
-      
-          <div class="hero-content">
-            <p class="eyebrow">Travel Ready</p>
-            <h2>푸꾸옥 여행<br />준비 체크리스트</h2>
-            <p>
-              여행 전 챙겨야 할 준비물을<br />
-              하나씩 확인해보세요.
-            </p>
+          <div class="slide-indicator">
+            <span>2</span>
+            <span>/</span>
+            <span>2</span>
           </div>
         </div>
-      </section>
 
-      <!-- 2페이지: 체크리스트 영역 -->
-      <section class="slide" id="slide2">
         <p class="description">
           여행 전 챙겨야 할 준비물을 카테고리별로 확인해보세요.
         </p>
@@ -245,7 +236,7 @@
           <div class="checklist">
             <label class="check-item">
               <input type="checkbox" data-id="day1-outfit" />
-              <span>1일차 공항룩</span>
+              <span>1일차(공항룩)</span>
             </label>
 
             <div class="outfit-card">
@@ -278,7 +269,7 @@
 
             <label class="check-item">
               <input type="checkbox" data-id="day4-outfit" />
-              <span>4일차 회색 반팔 + 청반바지</span>
+              <span>4일차(회색 반팔 + 청반바지)</span>
             </label>
 
             <label class="check-item">
@@ -307,15 +298,14 @@
             </label>
           </div>
         </section>
+
+        <div class="nav-buttons">
+          <button type="button" id="prevBtn">이전</button>
+          <button type="button" id="nextBtn">처음으로</button>
+        </div>
       </section>
-
-      <div class="nav-buttons">
-        <button type="button" id="prevBtn">이전</button>
-        <button type="button" id="nextBtn">다음</button>
-      </div>
-
-    </section>
-  </main>
+    </main>
+  </section>
 
   <script src="script.js"></script>
 </body>
